@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: main.java.test.java.ViewTests.CustomerLoginTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.12 sec <<< FAILURE!
-main.java.test.java.ViewTests.CustomerLoginTest.testHandleCancel()  Time elapsed: 0.115 sec  <<< FAILURE!
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec <<< FAILURE!
+main.java.test.java.ViewTests.CustomerLoginTest.testHandleCancel()  Time elapsed: 0.065 sec  <<< FAILURE!
 java.lang.reflect.InvocationTargetException
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
@@ -24,7 +24,7 @@ Caused by: java.lang.NullPointerException: Cannot read field "jbCancel" because 
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
 
-main.java.test.java.ViewTests.CustomerLoginTest.testGetCustID()  Time elapsed: 0.001 sec  <<< FAILURE!
+main.java.test.java.ViewTests.CustomerLoginTest.testGetCustID()  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.reflect.InvocationTargetException
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)

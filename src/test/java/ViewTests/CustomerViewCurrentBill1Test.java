@@ -1,4 +1,4 @@
-package tests.ViewTests;
+package ViewTests;
 
 import java.util.Map;
 

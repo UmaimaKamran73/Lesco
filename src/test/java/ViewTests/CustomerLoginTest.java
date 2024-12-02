@@ -1,5 +1,5 @@
-// package main.java.test.java.ViewTests;
-package main.java.test.java.ViewTests;
+
+package ViewTests;
 
 import javax.swing.SwingUtilities;
 

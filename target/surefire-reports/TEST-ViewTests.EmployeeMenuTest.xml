@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.557" tests="16" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ViewTests.EmployeeMenuTest" time="1.089" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/surefire/surefirebooter-20241202230740078_3.jar /home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/surefire 2024-12-02T23-07-40_014-jvmRun1 surefire-20241202230740078_1tmp surefire_0-20241202230740078_2tmp"/>
+    <property name="sun.java.command" value="/home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/surefire/surefirebooter-20241203004343328_3.jar /home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/surefire 2024-12-03T00-43-43_245-jvmRun1 surefire-20241203004343328_1tmp surefire_0-20241203004343328_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="ViewTests.CustomerViewCurrentBill2Test"/>
+    <property name="test" value="ViewTests.EmployeeMenuTest#testViewExpiringCNICReportButton"/>
     <property name="surefire.test.class.path" value="/home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/test-classes:/home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/classes:/home/haider/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/home/haider/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/home/haider/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/haider/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/home/haider/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/haider/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/home/haider/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/home/haider/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/home/haider/.m2/repository/org/mockito/mockito-core/5.5.0/mockito-core-5.5.0.jar:/home/haider/.m2/repository/net/bytebuddy/byte-buddy/1.14.6/byte-buddy-1.14.6.jar:/home/haider/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.6/byte-buddy-agent-1.14.6.jar:/home/haider/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/haider/.m2/repository/org/mockito/mockito-junit-jupiter/5.5.0/mockito-junit-jupiter-5.5.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/haider"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/surefire/surefirebooter-20241202230740078_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/haider/Desktop/FAST-22/SCD-A3/Lesco/target/surefire/surefirebooter-20241203004343328_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.13+11-Ubuntu-2ubuntu122.04"/>
     <property name="user.name" value="haider"/>
@@ -57,20 +57,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testMeterTypeLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.247"/>
-  <testcase name="testBackToMainMenuButton" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.013"/>
-  <testcase name="testRegularUnitsConsumedLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.012"/>
-  <testcase name="testViewTitle" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.049"/>
-  <testcase name="testTotalAmountDueLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.021"/>
-  <testcase name="testPhoneNumberLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.012"/>
-  <testcase name="testFixedChargesLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.007"/>
-  <testcase name="testDueDateLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.011"/>
-  <testcase name="testTaxLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.047"/>
-  <testcase name="testElectricityCostLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.007"/>
-  <testcase name="testCustomerTypeLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.012"/>
-  <testcase name="testAddressLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.011"/>
-  <testcase name="testPaymentStatusLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.011"/>
-  <testcase name="testPeakHourUnitsConsumedLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.039"/>
-  <testcase name="testCustomerNameLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.009"/>
-  <testcase name="testCustomerIDLabel" classname="tests.ViewTests.CustomerViewCurrentBill2Test" time="0.014"/>
+  <testcase name="testViewExpiringCNICReportButton" classname="ViewTests.EmployeeMenuTest" time="1.06">
+    <failure message="&#10;No interactions wanted here:&#10;-&gt; at ViewTests.EmployeeMenuTest.testViewExpiringCNICReportButton(EmployeeMenuTest.java:105)&#10;But found these interactions on mock &apos;employeeController&apos;:&#10;-&gt; at View.EmployeeViewExpiringCNICReport.&lt;init&gt;(EmployeeViewExpiringCNICReport.java:43)&#10;Actually, above is the only interaction with this mock." type="org.mockito.exceptions.verification.NoInteractionsWanted"><![CDATA[org.mockito.exceptions.verification.NoInteractionsWanted: 
+
+No interactions wanted here:
+-> at ViewTests.EmployeeMenuTest.testViewExpiringCNICReportButton(EmployeeMenuTest.java:105)
+But found these interactions on mock 'employeeController':
+-> at View.EmployeeViewExpiringCNICReport.<init>(EmployeeViewExpiringCNICReport.java:43)
+Actually, above is the only interaction with this mock.
+	at ViewTests.EmployeeMenuTest.testViewExpiringCNICReportButton(EmployeeMenuTest.java:105)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+  </testcase>
 </testsuite>

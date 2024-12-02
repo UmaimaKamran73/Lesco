@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="5" name="main.java.test.java.ViewTests.CustomerLoginTest" time="0.119" errors="0" skipped="0">
+<testsuite tests="5" failures="5" name="main.java.test.java.ViewTests.CustomerLoginTest" time="0.068" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.13+11-Ubuntu-2ubuntu122.04"/>
@@ -58,7 +58,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
   </properties>
-  <testcase classname="main.java.test.java.ViewTests.CustomerLoginTest" name="main.java.test.java.ViewTests.CustomerLoginTest.testHandleCancel" time="0.115">
+  <testcase classname="main.java.test.java.ViewTests.CustomerLoginTest" name="main.java.test.java.ViewTests.CustomerLoginTest.testHandleCancel" time="0.065">
     <failure type="java.lang.reflect.InvocationTargetException">java.lang.reflect.InvocationTargetException
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
@@ -81,7 +81,7 @@ Caused by: java.lang.NullPointerException: Cannot read field &quot;jbCancel&quot
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
 </failure>
   </testcase>
-  <testcase classname="main.java.test.java.ViewTests.CustomerLoginTest" name="main.java.test.java.ViewTests.CustomerLoginTest.testGetCustID" time="0.001">
+  <testcase classname="main.java.test.java.ViewTests.CustomerLoginTest" name="main.java.test.java.ViewTests.CustomerLoginTest.testGetCustID" time="0">
     <failure type="java.lang.reflect.InvocationTargetException">java.lang.reflect.InvocationTargetException
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
 	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)

@@ -1,4 +1,4 @@
-package tests.ViewTests;
+package ViewTests;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,10 +19,9 @@ class CustomerViewCurrentBill2Test {
 
   @BeforeEach
   void setUp() {
-    // Mock CustomerController
-    customerController = new CustomerController(); // Replace with a mock or test instance
 
-    // Mock billDetails
+    customerController = new CustomerController();
+
     billDetails = new HashMap<>();
     billDetails.put("CustomerID", "123");
     billDetails.put("CustomerName", "John Doe");
