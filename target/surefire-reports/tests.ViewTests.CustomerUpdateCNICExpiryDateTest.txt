@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: tests.ViewTests.CustomerUpdateCNICExpiryDateTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
+tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testGetNewExpiryDate()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "tfNewExpiryDate" because "this.updateCNICView" is null
+	at tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testGetNewExpiryDate(CustomerUpdateCNICExpiryDateTest.java:31)
+
+tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testHandleUpdate_Success()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "Controller.CustomerController.updateCNICExpiryDate(String)" because "this.mockCustomerController" is null
+	at tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testHandleUpdate_Success(CustomerUpdateCNICExpiryDateTest.java:37)
+
+tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testHandleUpdate_Failure()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "Controller.CustomerController.updateCNICExpiryDate(String)" because "this.mockCustomerController" is null
+	at tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testHandleUpdate_Failure(CustomerUpdateCNICExpiryDateTest.java:49)
+
+tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testHandleCancel()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "jbCancel" because "this.updateCNICView" is null
+	at tests.ViewTests.CustomerUpdateCNICExpiryDateTest.testHandleCancel(CustomerUpdateCNICExpiryDateTest.java:61)
+

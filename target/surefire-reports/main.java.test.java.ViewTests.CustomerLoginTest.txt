@@ -1,0 +1,114 @@
+-------------------------------------------------------------------------------
+Test set: main.java.test.java.ViewTests.CustomerLoginTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.12 sec <<< FAILURE!
+main.java.test.java.ViewTests.CustomerLoginTest.testHandleCancel()  Time elapsed: 0.115 sec  <<< FAILURE!
+java.lang.reflect.InvocationTargetException
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
+	at java.desktop/javax.swing.SwingUtilities.invokeAndWait(SwingUtilities.java:1480)
+	at main.java.test.java.ViewTests.CustomerLoginTest.testHandleCancel(CustomerLoginTest.java:76)
+Caused by: java.lang.NullPointerException: Cannot read field "jbCancel" because "this.customerLogin" is null
+	at main.java.test.java.ViewTests.CustomerLoginTest.lambda$testHandleCancel$11(CustomerLoginTest.java:76)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:308)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+main.java.test.java.ViewTests.CustomerLoginTest.testGetCustID()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.reflect.InvocationTargetException
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
+	at java.desktop/javax.swing.SwingUtilities.invokeAndWait(SwingUtilities.java:1480)
+	at main.java.test.java.ViewTests.CustomerLoginTest.testGetCustID(CustomerLoginTest.java:32)
+Caused by: java.lang.NullPointerException: Cannot read field "tfCustID" because "this.customerLogin" is null
+	at main.java.test.java.ViewTests.CustomerLoginTest.lambda$testGetCustID$1(CustomerLoginTest.java:32)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:308)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+main.java.test.java.ViewTests.CustomerLoginTest.testGetCNIC()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.reflect.InvocationTargetException
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
+	at java.desktop/javax.swing.SwingUtilities.invokeAndWait(SwingUtilities.java:1480)
+	at main.java.test.java.ViewTests.CustomerLoginTest.testGetCNIC(CustomerLoginTest.java:38)
+Caused by: java.lang.NullPointerException: Cannot read field "tfCNIC" because "this.customerLogin" is null
+	at main.java.test.java.ViewTests.CustomerLoginTest.lambda$testGetCNIC$3(CustomerLoginTest.java:38)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:308)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+main.java.test.java.ViewTests.CustomerLoginTest.testHandleLoginSuccess()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.reflect.InvocationTargetException
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
+	at java.desktop/javax.swing.SwingUtilities.invokeAndWait(SwingUtilities.java:1480)
+	at main.java.test.java.ViewTests.CustomerLoginTest.testHandleLoginSuccess(CustomerLoginTest.java:44)
+Caused by: java.lang.NullPointerException: Cannot read field "tfCustID" because "this.customerLogin" is null
+	at main.java.test.java.ViewTests.CustomerLoginTest.lambda$testHandleLoginSuccess$5(CustomerLoginTest.java:45)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:308)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+main.java.test.java.ViewTests.CustomerLoginTest.testHandleLoginFailure()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.reflect.InvocationTargetException
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1371)
+	at java.desktop/java.awt.EventQueue.invokeAndWait(EventQueue.java:1346)
+	at java.desktop/javax.swing.SwingUtilities.invokeAndWait(SwingUtilities.java:1480)
+	at main.java.test.java.ViewTests.CustomerLoginTest.testHandleLoginFailure(CustomerLoginTest.java:60)
+Caused by: java.lang.NullPointerException: Cannot read field "tfCustID" because "this.customerLogin" is null
+	at main.java.test.java.ViewTests.CustomerLoginTest.lambda$testHandleLoginFailure$8(CustomerLoginTest.java:61)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:308)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+

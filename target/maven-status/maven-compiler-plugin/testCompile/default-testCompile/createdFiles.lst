@@ -1,0 +1,7 @@
+tests/ViewTests/CustomerViewCurrentBill1Test.class
+tests/ViewTests/CustomerMenuTest.class
+tests/ViewTests/EmployeeAddBillTest.class
+tests/ViewTests/CustomerViewCurrentBill2Test.class
+main/java/test/java/ViewTests/CustomerLoginTest.class
+tests/ViewTests/EmployeeChangePasswordTest.class
+tests/ViewTests/CustomerUpdateCNICExpiryDateTest.class
