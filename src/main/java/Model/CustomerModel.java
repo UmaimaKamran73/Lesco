@@ -12,7 +12,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CustomerModel 
 {
@@ -21,10 +23,10 @@ public class CustomerModel
     private BillingDataAccess billingFile;
     private TarrifTaxDataAccess tariffFile;
 
-    private ArrayList<Customer> customerList;
-    private ArrayList<Nadra> nadraList;
-    private ArrayList<Billing> billingList;
-    private ArrayList<TarrifTax> tariffList;
+    private List<Customer> customerList;
+    private List<Nadra> nadraList;
+    private List<Billing> billingList;
+    private List<TarrifTax> tariffList;
     private Customer currentCustomer;
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -43,6 +45,19 @@ public class CustomerModel
 
         // Match billing records with customers
         A1_SCD_22l7942.matchBillingRecords(customerList, billingList);
+    }
+
+    public CustomerModel(FileCustomerDataAccess customerFile, NadraDataAccess nadraFile, BillingDataAccess billingFile, TarrifTaxDataAccess tariffFile, List<Customer> customerList, List<Nadra> nadraList, List<Billing> billingList, List<TarrifTax> tariffList) 
+    {
+         this.customerFile= customerFile;
+        this.nadraFile = nadraFile ;
+        this.billingFile = billingFile;
+        this.tariffFile = tariffFile;
+        
+        this.customerList = customerList;
+        this.nadraList = nadraList;
+        this.billingList = billingList;
+        this.tariffList = tariffList;
     }
 
     public boolean authenticateCustomer(String custID, String CNIC) 
@@ -115,7 +130,7 @@ public class CustomerModel
 
     public Map<String, String> viewCurrentBill(int meterReading, MeterType meterType)
     {
-        Map<String, String> billDetails = new HashMap<>();
+        Map<String, String> billDetails = new ConcurrentHashMap<>();
         
         if (currentCustomer == null)
         {
@@ -199,7 +214,7 @@ public class CustomerModel
         return null;
     }
 
-    public ArrayList<TarrifTax> getTarrifList() 
+    public List<TarrifTax> getTarrifList() 
     {
         return tariffList;
     }

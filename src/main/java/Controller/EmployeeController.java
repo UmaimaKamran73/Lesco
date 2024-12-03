@@ -11,6 +11,7 @@ import com.mycompany.a1_scd_22l7942.Nadra;
 import com.mycompany.a1_scd_22l7942.TarrifTax;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -35,7 +36,7 @@ public class EmployeeController
         return employeeModel.authenticateEmployee(username, password);
     }
     
-    public ArrayList<Integer> viewBillsReport() 
+    public List<Integer> viewBillsReport() 
     {
         return employeeModel.viewBillsReport();
     }
@@ -70,7 +71,7 @@ public class EmployeeController
         return employeeModel.getPassword();
     }
 
-    public ArrayList<TarrifTax> getTarrifList() 
+    public List<TarrifTax> getTarrifList() 
     {
         return employeeModel.getTarrifList();
     }
@@ -80,19 +81,18 @@ public class EmployeeController
         employeeModel.updateTarrif(tarrif);
     }
 
-    public ArrayList<Customer> getCustomerList() 
+    public List<Customer> getCustomerList() 
     {
         return employeeModel.getCustomerList();
     }
 
-    public ArrayList<Nadra> getExpiringCNICList() 
+    public List<Nadra> getExpiringCNICList() 
     {
         return employeeModel.getExpiringCNICList();
     }
 
-    public ArrayList<Billing> getBillsList() 
+    public List<Billing> getBillsList() 
     {
-        
         return employeeModel.getBillsWithCustomerInfo();
     }
 

@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,7 +33,7 @@ public class EmployeeViewBillsReport extends JFrame
         setVisible(true);
     }
 
-    private void init(ArrayList<Integer> bills)//String totalBills, String paidBills, String unpaidBills) 
+    private void init(List<Integer> bills)//String totalBills, String paidBills, String unpaidBills) 
     {
         setBounds(100,100,400,200);
         setLayout(new BorderLayout());

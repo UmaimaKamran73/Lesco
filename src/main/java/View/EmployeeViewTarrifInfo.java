@@ -11,6 +11,7 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -38,7 +39,7 @@ public class EmployeeViewTarrifInfo extends JFrame
     private DefaultTableModel model;
     private JTable table;
     EmployeeController empController;
-    private ArrayList<TarrifTax> data;
+    private List<TarrifTax> data;
     private JButton jbBackToMainMenu;
     private JTextField searchBar;
 

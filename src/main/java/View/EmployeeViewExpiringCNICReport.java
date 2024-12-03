@@ -10,6 +10,7 @@ import com.mycompany.a1_scd_22l7942.TarrifTax;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,7 +35,7 @@ public class EmployeeViewExpiringCNICReport extends JFrame
     private DefaultTableModel model;
     EmployeeController empController;
     private JTable table;
-    ArrayList<Nadra> data;
+    List<Nadra> data;
     private JTextField searchBar;
     
     public EmployeeViewExpiringCNICReport(EmployeeController empController) 

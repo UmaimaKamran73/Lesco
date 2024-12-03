@@ -6,6 +6,7 @@ package com.mycompany.a1_scd_22l7942;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,7 +15,7 @@ import java.util.Scanner;
  */
 public class TarrifTaxFunc 
 {
-     public static void displayTarrifTax(ArrayList<TarrifTax> tarrif)
+     public static void displayTarrifTax(List<TarrifTax> tarrif)
     {
         System.out.println(tarrif.size());
         System.out.println("-------TARRIF TAX INFO-----------");
@@ -26,7 +27,7 @@ public class TarrifTaxFunc
         }
     }
     
-    public static void updateTarrifTax(ArrayList<TarrifTax> tarrifList)
+    public static void updateTarrifTax(List<TarrifTax> tarrifList)
     {
         Scanner obj=new Scanner(System.in);
         int meter,cust;
@@ -70,7 +71,7 @@ public class TarrifTaxFunc
         
         //saving data back in file
     }
-    public static void updateFixedPrice(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updateFixedPrice(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Fixed Price: ");
         int fixedPrice = obj.nextInt();
@@ -89,7 +90,7 @@ public class TarrifTaxFunc
         
     }
 
-    public static void updateTaxPercentage(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updateTaxPercentage(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Tax Percentage: ");
         float taxPercentage = obj.nextFloat();
@@ -108,7 +109,7 @@ public class TarrifTaxFunc
             } 
     }
 
-    public static void updateRegularUnitPrice(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updateRegularUnitPrice(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Regular Unit Price: ");
         BigDecimal regularUnitPrice = obj.nextBigDecimal();
@@ -130,7 +131,7 @@ public class TarrifTaxFunc
         }
     }
 
-    public static void updatePeakUnitPrice(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updatePeakUnitPrice(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Peak Unit Price: ");
         BigDecimal peakUnitPrice = obj.nextBigDecimal();

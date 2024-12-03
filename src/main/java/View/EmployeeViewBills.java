@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.PopupMenu;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -42,9 +43,9 @@ public class EmployeeViewBills extends JFrame
     DefaultTableModel model;
     private JButton jbBackToMainMenu;
     EmployeeController empController;
-    ArrayList<Billing> data;
+    List<Billing> data;
     JTextField searchField;
-    ArrayList<Billing> filteredData; // To hold filtered results
+    List<Billing> filteredData; // To hold filtered results
     private JTextField searchBar;
 
     public EmployeeViewBills(EmployeeController empController) 

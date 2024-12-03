@@ -11,6 +11,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  *
@@ -19,10 +22,14 @@ import java.util.ArrayList;
 public class TarrifTaxDataAccess 
 {
     public final String TARRIF_TAX_FILE_PATH="TarrifTaxInfo.txt";
-    public ArrayList<TarrifTax> loadData()
+    
+    private static final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+
+    public List<TarrifTax> loadData()
     {
-        ArrayList<TarrifTax> tarrifList =new ArrayList<>();
+        List<TarrifTax> tarrifList =new CopyOnWriteArrayList<>();
         
+        rwLock.readLock().lock();
         //opening file andloading the 4 rows into the arraylist
         try(BufferedReader br=new BufferedReader(new FileReader(TARRIF_TAX_FILE_PATH)))
         {
@@ -57,13 +64,18 @@ public class TarrifTaxDataAccess
         {
             System.out.println("Error Loading the TarrifTax File: "+ e.getMessage());
         }
+        finally
+        {
+            rwLock.readLock().unlock();
+        }
         
         return tarrifList;
     }
     
     
-    public void saveData(ArrayList<TarrifTax> tarrifList)
+    public void saveData(List<TarrifTax> tarrifList)
     {
+        rwLock.writeLock().lock();
         try(BufferedWriter bw=new BufferedWriter(new FileWriter(TARRIF_TAX_FILE_PATH)))
         {
             for(TarrifTax tarrif:tarrifList)
@@ -76,6 +88,10 @@ public class TarrifTaxDataAccess
         catch(IOException e)
         {
             System.out.println("Error Saving data in TarrifTaxFile"+e.getMessage());
+        }
+        finally
+        {
+            rwLock.writeLock().unlock();
         }
         
     }

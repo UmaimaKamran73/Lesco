@@ -9,6 +9,7 @@ import Controller.EmployeeController;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -117,9 +118,9 @@ public class EmployeeMenu extends JFrame
 
     private void handleViewBillsReport()
     {
-        ArrayList<Integer> bills=empController.viewBillsReport();
+        List<Integer> bills=empController.viewBillsReport();
         setVisible(false); dispose();
-        new EmployeeViewBillsReport(empController,bills);
+        new EmployeeViewBillsReport(empController, (ArrayList<Integer>) bills);
     }
 
     private void handleViewBills() 

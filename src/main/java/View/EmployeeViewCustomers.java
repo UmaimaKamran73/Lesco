@@ -12,6 +12,7 @@ import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,7 +38,7 @@ public class EmployeeViewCustomers extends JFrame
     private DefaultTableModel model;
     private JTable table;
     EmployeeController empController;
-    private ArrayList<Customer> data;
+    private List<Customer> data;
     private JButton jbBackToMainMenu;
     private JTextField searchBar;
 

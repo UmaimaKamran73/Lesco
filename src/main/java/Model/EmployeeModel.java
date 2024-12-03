@@ -24,6 +24,8 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  *
@@ -37,11 +39,11 @@ public class EmployeeModel
     private TarrifTaxDataAccess tariffFile;
     private EmployeeDataAccess employeeFile;
     
-    private ArrayList<Customer> customerList;
-    private ArrayList<Nadra> nadraList;
-    private ArrayList<Billing> billingList;
-    private ArrayList<TarrifTax> tariffList;
-    private ArrayList<Employee> employeeList;
+    private List<Customer> customerList;
+    private List<Nadra> nadraList;
+    private List<Billing> billingList;
+    private List<TarrifTax> tariffList;
+    private List<Employee> employeeList;
     private Employee currentEmployee;
 
     public EmployeeModel() 
@@ -64,7 +66,7 @@ public class EmployeeModel
     
     public boolean authenticateEmployee(String username, String password) 
     {
-       currentEmployee= employeeFile.authenticateEmployee(username, password);
+       currentEmployee= employeeFile.authenticateEmployee(username, password);//THIS
        if(currentEmployee==null)
        {
            return false;
@@ -73,11 +75,11 @@ public class EmployeeModel
     }
     
     //view Bills Report
-    public ArrayList<Integer> viewBillsReport() 
+    public List<Integer> viewBillsReport() 
     {
         int paid = 0, unpaid = 0;
         // Iterate through the billing list to count paid and unpaid bills
-        for (Billing billing : billingList)
+        for (Billing billing : billingList) //THIS
         {
             if (billing.getBillPaidStatus().equals(BillStatus.PAID)) 
             {
@@ -90,7 +92,7 @@ public class EmployeeModel
         }
 
         // Create a report list: [total bills, paid bills, unpaid bills]
-        ArrayList<Integer> report = new ArrayList<>();
+        List<Integer> report = new CopyOnWriteArrayList<>();
         report.add(billingList.size()); 
         report.add(paid);               
         report.add(unpaid);             
@@ -185,10 +187,10 @@ public class EmployeeModel
             BillStatus.UNPAID
         );
 
-        customer.addBilling(newBilling);
-        billingList.add(newBilling);
+        customer.addBilling(newBilling); //THIS
+        billingList.add(newBilling); //THIS --it iz fine now
         // Save data in file
-        billingFile.saveFileData(billingList); // Make sure you have a save function in BillingDataAccess
+        billingFile.saveFileData(billingList); //THIS // Make sure you have a save function in BillingDataAccess 
         System.out.println("Billing record added successfully.");
         return "Billing record added successfully.";
     }
@@ -196,7 +198,7 @@ public class EmployeeModel
     // Find a customer by ID
     public Customer findCustomer(String custID) 
     {
-        for (Customer customer : customerList) 
+        for (Customer customer : customerList) //THIS
         {
             if (customer.getCustID().equals(custID)) 
             {
@@ -220,8 +222,8 @@ public class EmployeeModel
         // Create a new customer if the customer does not exist
         Customer newCustomer = createNewCustomer(cnic, name, address, phoneNumber, custType, meterType);
         if (newCustomer != null) {
-            customerList.add(newCustomer);
-            customerFile.saveAllCustomers(customerList);
+            customerList.add(newCustomer); //THIS
+            customerFile.saveAllCustomers(customerList); //THIS
             return "New meter installed successfully.";
         } 
         else
@@ -247,11 +249,11 @@ public class EmployeeModel
         return true;
     }
     
-    public static boolean canInstallMeter(String CNIC,ArrayList<Customer> customers)
+    public static boolean canInstallMeter(String CNIC,List<Customer> customers)
     {
         int meterCount=0;
         
-        for(Customer customer: customers)
+        for(Customer customer: customers) //THIS
         {
             if(customer.getCNIC().equals(CNIC))
             {
@@ -302,12 +304,12 @@ public class EmployeeModel
         //return newCustomer;
     }
     
-    public static String generateCustomerId(ArrayList<Customer> customerList)
+    public static String generateCustomerId(List<Customer> customerList)
      {
          int maxId = 1000;  // Start with the lowest possible 4-digit ID
 
         // Find the highest existing customer ID
-        for (Customer customer : customerList) 
+        for (Customer customer : customerList) //THIS
         {
             int custId = Integer.parseInt(customer.getCustID());
             if (custId > maxId)
@@ -341,12 +343,12 @@ public class EmployeeModel
     public void changePassword(String newPassword)
     {
         currentEmployee.setPassword(newPassword);
-       employeeFile.updatePassword(currentEmployee.getUsername(), newPassword);
+       employeeFile.updatePassword(currentEmployee.getUsername(), newPassword); //THIS
     }
     
     //View Tarrif Info
 
-    public ArrayList<TarrifTax> getTarrifList() 
+    public List<TarrifTax> getTarrifList() 
     {
         return tariffList;
     }
@@ -362,7 +364,7 @@ public class EmployeeModel
                 tarrif.getCustType().equals(updatedTarrif.getCustType())) 
             {
                 tariffList.set(i, updatedTarrif);
-                tariffFile.saveData(tariffList);  // Save updated list back to the file
+                tariffFile.saveData(tariffList);  // Save updated list back to the file //THIS
                 return;
             }
         }
@@ -370,38 +372,38 @@ public class EmployeeModel
 
     
     //view Customers
-    public ArrayList<Customer> getCustomerList() 
+    public List<Customer> getCustomerList() 
     {
         return customerList;
     }
 
     //report of expiring cnics
-    public ArrayList<Nadra> getExpiringCNICList() 
+    public List<Nadra> getExpiringCNICList() 
     {
-        ArrayList<Nadra> expiringCNICList=new ArrayList<>();
+        List<Nadra> expiringCNICList=new CopyOnWriteArrayList<>();
         //"\tThe folloing are CNICs expiring within the next 30 days: ");
-        for(Nadra n:nadraList)
+        for(Nadra n:nadraList) //THIS
         {
             //checking cnic expiry date
             if(n.isCNICExpiringIn30Days())
             {
-                expiringCNICList.add(n);
+                expiringCNICList.add(n); 
             }
         }
         return expiringCNICList;
     }
 
-     public ArrayList<Billing> getBillsWithCustomerInfo()
+     public List<Billing> getBillsWithCustomerInfo()
      {
-        ArrayList<Billing> billsWithCustomerInfo = new ArrayList<>();
+        List<Billing> billsWithCustomerInfo = new CopyOnWriteArrayList<>();
     
-        for (Billing bill : billingList) 
+        for (Billing bill : billingList)  //THIS
         {
-            for (Customer customer : customerList) 
+            for (Customer customer : customerList)  //THIS
             {
                 if (customer != null && customer.getCustID().equals(bill.getCustID())) 
                 {
-                    bill.setCustomerName(customer.getCustName());
+                    bill.setCustomerName(customer.getCustName()); //THIS
                     billsWithCustomerInfo.add(bill);
                     break; // Found the correct customer, exit inner loop
                 }
@@ -419,7 +421,7 @@ public class EmployeeModel
     // Check if the bill is the most recent
     public boolean isMostRecent(Billing bill)
     {
-        for (Billing b : billingList) 
+        for (Billing b : billingList)  //THIS
         {
             if (b.getCustID().equals(bill.getCustID()))
             {
@@ -439,14 +441,14 @@ public class EmployeeModel
     // Update the bill status to 'Paid'
     public boolean updateBillStatus(String custID, Month billingMonth)
     {
-        Billing billingRecord = findBillingRecord(custID, billingMonth);
+        Billing billingRecord = findBillingRecord(custID, billingMonth); //THIS
         if (billingRecord != null && billingRecord.getBillPaidStatus().equals(BillStatus.UNPAID))
         {
-            billingRecord.setBillPaidStatus(BillStatus.PAID);
-            billingRecord.setBillPaymentDate(LocalDate.now());
+            billingRecord.setBillPaidStatus(BillStatus.PAID); //THIS
+            billingRecord.setBillPaymentDate(LocalDate.now()); 
 
             // Save updated billing list to file
-            billingFile.saveFileData(billingList);
+            billingFile.saveFileData(billingList); //THIS
             return true;
         }
         return false;
@@ -458,8 +460,8 @@ public class EmployeeModel
         Billing billingRecord = findBillingRecord(custID, billingMonth);
         if (billingRecord != null)// && isMostRecent(billingRecord)) 
         {
-            billingList.remove(billingRecord);
-            billingFile.saveFileData(billingList);
+            billingList.remove(billingRecord); //THIS
+            billingFile.saveFileData(billingList); //THIS
             return true;
         }
         return false;
@@ -468,7 +470,7 @@ public class EmployeeModel
     // Helper function to find the billing record
     public Billing findBillingRecord(String custID, Month billingMonth) 
     {
-        for (Billing bill : billingList)
+        for (Billing bill : billingList) //THIS
         {
             if (bill.getCustID().equals(custID) && bill.getBillingMonth().equals(billingMonth)) 
             {
@@ -493,7 +495,7 @@ public class EmployeeModel
         // Find the customer with the matching ID and update it
         for (int i = 0; i < customerList.size(); i++) 
         {
-            Customer currentCustomer = customerList.get(i);
+            Customer currentCustomer = customerList.get(i); //THIS
             if (currentCustomer.getCustID().equals(updatedCustomer.getCustID())) 
             {
                 // Replace the old customer with the updated one
@@ -503,7 +505,7 @@ public class EmployeeModel
         }
 
         // Save the updated customer list back to the file
-        customerFile.saveAllCustomers(customerList);
+        customerFile.saveAllCustomers(customerList); //THIS
     }
 
 }
