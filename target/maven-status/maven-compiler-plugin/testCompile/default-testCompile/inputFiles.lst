@@ -5,6 +5,8 @@
 /home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ModelTests/FileCustomerDataAccessTest.java
 /home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ModelTests/NadraDataAccessTest.java
 /home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ModelTests/NadraTest.java
+/home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ModelTests/TarrifTaxDataAccessTest.java
+/home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ModelTests/TarrifTaxTest.java
 /home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ViewTests/CustomerLoginTest.java
 /home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ViewTests/CustomerMenuTest.java
 /home/haider/Desktop/FAST-22/SCD-A3/Lesco/src/test/java/ViewTests/CustomerUpdateCNICExpiryDateTest.java

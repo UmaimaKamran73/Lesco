@@ -7,12 +7,14 @@ ModelTests/NadraTest.class
 ViewTests/EmployeeInstallNewMeterTest.class
 ModelTests/BillingDataAccessTest$1.class
 ViewTests/EmployeeViewExpiringCNICReportTest.class
+ModelTests/TarrifTaxTest.class
 ModelTests/NadraDataAccessTest$2.class
 ViewTests/EmployeeViewCustomersTest.class
 ModelTests/EmployeeTest.class
 ViewTests/EmployeeViewBillsTest.class
 ViewTests/EmployeeChangePasswordTest.class
 ModelTests/NadraDataAccessTest.class
+ModelTests/TarrifTaxDataAccessTest.class
 ViewTests/EmployeeEditTarrifInfoTest.class
 ViewTests/CustomerLoginTest.class
 ViewTests/CustomerViewCurrentBill1Test.class
