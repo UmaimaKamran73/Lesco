@@ -4,26 +4,26 @@
  */
 package Controller;
 
-import Model.EmployeeModel;
+import java.time.Month;
+import java.util.ArrayList;
+
 import com.mycompany.a1_scd_22l7942.Billing;
 import com.mycompany.a1_scd_22l7942.Customer;
 import com.mycompany.a1_scd_22l7942.Nadra;
 import com.mycompany.a1_scd_22l7942.TarrifTax;
-import java.time.Month;
-import java.util.ArrayList;
+
 import java.util.List;
 
-/**
- *
- * @author LENOVO
- */
+import Model.EmployeeModel;
+
+
 public class EmployeeController 
 {
-    private EmployeeModel employeeModel;
+    public EmployeeModel employeeModel;
 
     public EmployeeController() 
     {
-        employeeModel=new EmployeeModel();
+        employeeModel = new EmployeeModel();
     }
 
     public EmployeeController(EmployeeModel employeeModel) 
@@ -31,12 +31,13 @@ public class EmployeeController
         this.employeeModel = employeeModel;
     }
 
-    public boolean login(String username, String password)
+    public boolean login(String username, String password) 
     {
         return employeeModel.authenticateEmployee(username, password);
     }
-    
-    public List<Integer> viewBillsReport() 
+
+
+    public List<Integer> viewBillsReport()
     {
         return employeeModel.viewBillsReport();
     }
@@ -46,27 +47,28 @@ public class EmployeeController
         return employeeModel.addBill(custID, currentRegularMeterReading, currentPeakMeterReading);
     }
 
-    public boolean isValidCNIC(String cnic) 
+    public boolean isValidCNIC(String cnic)
     {
         return employeeModel.isValidCNIC(cnic);
     }
 
-    public String installNewMeter(String cnic, String name, String address, String phoneNumber, String custType, String meterType) 
+    public String installNewMeter(String cnic, String name, String address, String phoneNumber, String custType,
+            String meterType)
     {
-        return employeeModel.installNewMeter(cnic, name, address,phoneNumber, custType,meterType);
+        return employeeModel.installNewMeter(cnic, name, address, phoneNumber, custType, meterType);
     }
 
-    public String getUsername() 
+    public String getUsername()
     {
         return employeeModel.getUsername();
     }
 
-    public void changePassword(String currentPassword, String newPassword) 
+    public void changePassword(String currentPassword, String newPassword)
     {
         employeeModel.changePassword(newPassword);
     }
-    
-    public String getPassword()
+
+    public String getPassword() 
     {
         return employeeModel.getPassword();
     }
@@ -96,43 +98,42 @@ public class EmployeeController
         return employeeModel.getBillsWithCustomerInfo();
     }
 
-   //view bills
+    // view bills
     public boolean isMostRecentOrUnpaid(Billing bill) 
     {
         return employeeModel.isMostRecentOrUnpaid(bill);
     }
 
-    public boolean isMostRecent(Billing bill) 
+    public boolean isMostRecent(Billing bill)
     {
         return employeeModel.isMostRecentOrUnpaid(bill);
     }
 
     public boolean updateBillStatus(String custID, Month billingMonth) 
     {
-        return employeeModel.updateBillStatus(custID,billingMonth);
+        return employeeModel.updateBillStatus(custID, billingMonth);
     }
 
-    public boolean deleteBillRecord(String custID, Month billingMonth) 
+    public boolean deleteBillRecord(String custID, Month billingMonth)
     {
-        return employeeModel.deleteBillRecord(custID,billingMonth);
+        return employeeModel.deleteBillRecord(custID, billingMonth);
     }
 
-    public TarrifTax getTarrifAt(int row) 
+    public TarrifTax getTarrifAt(int row)
     {
         return employeeModel.getTarrifAt(row);
     }
 
-    public void editCustomer(Customer customer)
+    public void editCustomer(Customer customer) 
     {
         employeeModel.editCustomer(customer);
     }
 
     public boolean deleteCustomer(String custID) 
     {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    
-    
-    
+        
 }
+

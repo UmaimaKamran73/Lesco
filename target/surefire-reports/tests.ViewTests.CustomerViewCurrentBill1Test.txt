@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: tests.ViewTests.CustomerViewCurrentBill1Test
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+tests.ViewTests.CustomerViewCurrentBill1Test.testGetMeterType_SinglePhase()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "rbSinglePhase" because "this.customerView" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testGetMeterType_SinglePhase(CustomerViewCurrentBill1Test.java:35)
+
+tests.ViewTests.CustomerViewCurrentBill1Test.testGetMeterType_ThreePhase()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "rbThreePhase" because "this.customerView" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testGetMeterType_ThreePhase(CustomerViewCurrentBill1Test.java:42)
+
+tests.ViewTests.CustomerViewCurrentBill1Test.testGetMeterReading()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "tfMeterReading" because "this.customerView" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testGetMeterReading(CustomerViewCurrentBill1Test.java:48)
+
+tests.ViewTests.CustomerViewCurrentBill1Test.testHandleViewBill_Success()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "Controller.CustomerController.viewCurrBill(int, com.mycompany.a1_scd_22l7942.MeterType)" because "this.mockCustomerController" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testHandleViewBill_Success(CustomerViewCurrentBill1Test.java:56)
+
+tests.ViewTests.CustomerViewCurrentBill1Test.testHandleViewBill_Failure_InvalidInput()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "tfMeterReading" because "this.customerView" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testHandleViewBill_Failure_InvalidInput(CustomerViewCurrentBill1Test.java:71)
+
+tests.ViewTests.CustomerViewCurrentBill1Test.testHandleViewBill_Failure_BillNotFound()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "Controller.CustomerController.viewCurrBill(int, com.mycompany.a1_scd_22l7942.MeterType)" because "this.mockCustomerController" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testHandleViewBill_Failure_BillNotFound(CustomerViewCurrentBill1Test.java:81)
+
+tests.ViewTests.CustomerViewCurrentBill1Test.testHandleCancel()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot read field "jbCancel" because "this.customerView" is null
+	at tests.ViewTests.CustomerViewCurrentBill1Test.testHandleCancel(CustomerViewCurrentBill1Test.java:95)
+
