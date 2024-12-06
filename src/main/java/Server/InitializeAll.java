@@ -19,6 +19,8 @@ import java.util.List;
 
 public class InitializeAll 
 {
+    CustomerController customerController;
+    EmployeeController employeeController;
     public void InitializeCusomter()
     {
         FileCustomerDataAccess customerFile = new FileCustomerDataAccess();
@@ -32,8 +34,17 @@ public class InitializeAll
         List<TarrifTax> tariffList= tariffFile.loadData();
      
         CustomerModel customerModel=new CustomerModel(customerFile,nadraFile,billingFile,tariffFile,customerList,nadraList,billingList,tariffList);
-        CustomerController custController=new CustomerController(customerModel);
-        EmployeeController empController=new EmployeeController();
-        new Welcome(custController,empController);
+         customerController=new CustomerController(customerModel);
+         employeeController=new EmployeeController();
+    }
+
+    public CustomerController getCustomerController() 
+    {
+        return customerController;
+    }
+
+    public EmployeeController getEmployeeController() 
+    {
+        return employeeController;
     }
 }

@@ -6,6 +6,7 @@ package com.mycompany.a1_scd_22l7942;
 
 import Controller.CustomerController;
 import Controller.EmployeeController;
+import Server.Server;
 import View.Welcome;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -66,7 +67,7 @@ public class A1_SCD_22l7942
     {
         Scanner obj=new Scanner(System.in);
         
-        
+        Server server=new Server();
 
         CustomerController custController=new CustomerController();
         EmployeeController empController=new EmployeeController();
