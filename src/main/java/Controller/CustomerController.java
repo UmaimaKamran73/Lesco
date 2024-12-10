@@ -6,19 +6,32 @@ package Controller;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-
+import Model.CustomerModel;
 import com.mycompany.a1_scd_22l7942.MeterType;
 import com.mycompany.a1_scd_22l7942.TarrifTax;
 
-import Model.CustomerModel;
 
-public class CustomerController {
+public class CustomerController 
+{
     public CustomerModel customerModel;
+    
+    public CustomerController() 
+    {
+        customerModel=new CustomerModel();
+    }
 
+    
+    public CustomerController(CustomerModel customerModel) 
+    {
+        this.customerModel = customerModel;
+    }
+/*
     public CustomerController() {
         customerModel = new CustomerModel();
-    }
+
+    }*/
 
     public boolean login(String custID, String CNIC) {
         return customerModel.authenticateCustomer(custID, CNIC);
@@ -40,7 +53,9 @@ public class CustomerController {
         return customerModel.viewCurrentBill(meterReading, meterType);
     }
 
-    public ArrayList<TarrifTax> getTarrifList() {
+
+    public List<TarrifTax> getTarrifList() 
+    {
         return customerModel.getTarrifList();
     }
 

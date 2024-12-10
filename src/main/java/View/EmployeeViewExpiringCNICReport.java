@@ -7,6 +7,8 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,21 +25,31 @@ import com.mycompany.a1_scd_22l7942.Nadra;
 
 import Controller.EmployeeController;
 
-/**
- *
- * @author LENOVO
- */
+
 public class EmployeeViewExpiringCNICReport extends JFrame {
 
+   /* JLabel jlTitle;
+    private JButton jbBackToMainMenu;
+    private DefaultTableModel model;
+    EmployeeController empController;
+    private JTable table;
+    List<Nadra> data;
+    private JTextField searchBar;*/
+    
+  /*  public EmployeeViewExpiringCNICReport(EmployeeController empController) 
+    {
+        this.empController=empController;
+        data=empController.getExpiringCNICList();*/
     public JLabel jlTitle;
     public JButton jbBackToMainMenu;
     public DefaultTableModel model;
     public EmployeeController empController;
     public JTable table;
-    public ArrayList<Nadra> data;
+    public List<Nadra> data;
     public JTextField searchBar;
 
-    public EmployeeViewExpiringCNICReport(EmployeeController empController) {
+    public EmployeeViewExpiringCNICReport(EmployeeController empController) 
+    {
         this.empController = empController;
         data = empController.getExpiringCNICList();
         init();

@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -27,17 +28,21 @@ import com.mycompany.a1_scd_22l7942.TarrifTax;
 
 import Controller.EmployeeController;
 
-/**
- *
- * @author LENOVO
- */
+
 public class EmployeeViewTarrifInfo extends JFrame {
 
+/*    private JLabel jlTitle;
+    private DefaultTableModel model;
+    private JTable table;
+    EmployeeController empController;
+    private List<TarrifTax> data;
+    private JButton jbBackToMainMenu;
+    private JTextField searchBar;*/
     public JLabel jlTitle;
     public DefaultTableModel model;
     public JTable table;
     public EmployeeController empController;
-    public ArrayList<TarrifTax> data;
+    public List<TarrifTax> data;
     public JButton jbBackToMainMenu;
     public JTextField searchBar;
 

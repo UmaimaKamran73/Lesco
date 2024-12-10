@@ -8,6 +8,8 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
+
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -29,11 +31,22 @@ import com.mycompany.a1_scd_22l7942.Billing;
 
 import Controller.EmployeeController;
 
-/**
- *
- * @author LENOVO
- */
-public class EmployeeViewBills extends JFrame {
+/*public class EmployeeViewBills extends JFrame
+{
+    //will do it at the end with other view things
+    JLabel jlTitle;
+     //when till button will be clicked the bill will be displayed on the screen and will become editable(only the status will be changed thou. 
+    //may be I can do it like displaying only 1 option or making the whole different page by ourselves
+    JTable table;
+    DefaultTableModel model;
+    private JButton jbBackToMainMenu;
+    EmployeeController empController;
+    List<Billing> data;
+    JTextField searchField;
+    List<Billing> filteredData; // To hold filtered results
+    private JTextField searchBar; */
+public class EmployeeViewBills extends JFrame 
+{
     // will do it at the end with other view things
     public JLabel jlTitle;
     // when till button will be clicked the bill will be displayed on the screen and
@@ -44,9 +57,9 @@ public class EmployeeViewBills extends JFrame {
     public DefaultTableModel model;
     public JButton jbBackToMainMenu;
     public EmployeeController empController;
-    public ArrayList<Billing> data;
+    public List<Billing> data;
     public JTextField searchField;
-    public ArrayList<Billing> filteredData; // To hold filtered results
+    public List<Billing> filteredData; // To hold filtered results
     public JTextField searchBar;
 
     public EmployeeViewBills(EmployeeController empController) {

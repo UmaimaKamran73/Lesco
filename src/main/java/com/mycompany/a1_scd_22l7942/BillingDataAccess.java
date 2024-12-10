@@ -14,6 +14,9 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  *
@@ -24,9 +27,12 @@ public class BillingDataAccess
     private static final String BILLING_FILE_PATH="BillingInfo.txt";
     private static final DateTimeFormatter DATE_FORMAT=DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
-    public ArrayList<Billing> loadFileData()
+    private static final ReentrantReadWriteLock rwLock=new ReentrantReadWriteLock();
+    
+    public List<Billing> loadFileData()
     {
-        ArrayList<Billing> billingList=new ArrayList<>();
+        List<Billing> billingList=new CopyOnWriteArrayList<>();
+        rwLock.readLock().lock();
         try(BufferedReader reader=new BufferedReader(new FileReader(BILLING_FILE_PATH)))
         {
             String line;
@@ -78,10 +84,14 @@ public class BillingDataAccess
         {
             System.out.println("Error parsing Billing File Data: "+e.getMessage());
         }
+        finally
+        {
+            rwLock.readLock().unlock();
+        }
             return billingList;
     }
     
-    public static void addBillingToCustomer(String custID,ArrayList<Billing> billingList,ArrayList<Customer> customerList)
+    public static void addBillingToCustomer(String custID,List<Billing> billingList,List<Customer> customerList)
     {
         Customer matchedCustomer=null;
         
@@ -102,7 +112,7 @@ public class BillingDataAccess
             System.out.println("Cust with ID: "+custID+" not found");
         }
     }
-      public static Customer findCustomer(ArrayList<Customer> customerList,String CustID)
+      public static Customer findCustomer(List<Customer> customerList,String CustID)
     {
         for(Customer customer: customerList)
         {
@@ -115,8 +125,9 @@ public class BillingDataAccess
     }
     
     
-    public void saveFileData(ArrayList<Billing> billingList)
+    public void saveFileData(List<Billing> billingList)
     {
+        rwLock.writeLock().lock();
         try(BufferedWriter writer=new BufferedWriter(new FileWriter(BILLING_FILE_PATH)))
         {
             for(Billing billing: billingList)
@@ -148,6 +159,10 @@ public class BillingDataAccess
         catch(IOException e)
         {
             System.out.println("Error writing in Billing File: " + e.getMessage());
+        }
+        finally
+        {
+            rwLock.writeLock().unlock();
         }
     }
 }

@@ -7,6 +7,7 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,10 +16,6 @@ import javax.swing.JPanel;
 
 import Controller.EmployeeController;
 
-/**
- *
- * @author LENOVO
- */
 public class EmployeeViewBillsReport extends JFrame {
     public JLabel jlTitle;
     public JLabel jlTotalBills, jlPaidBills, jlUnpaidBills;
@@ -31,7 +28,8 @@ public class EmployeeViewBillsReport extends JFrame {
         setVisible(true);
     }
 
-    private void init(ArrayList<Integer> bills)// String totalBills, String paidBills, String unpaidBills)
+    private void init(List<Integer> bills)//String totalBills, String paidBills, String unpaidBills) 
+   // private void init(ArrayList<Integer> bills)// String totalBills, String paidBills, String unpaidBills)
     {
         setBounds(100, 100, 400, 200);
         setLayout(new BorderLayout());

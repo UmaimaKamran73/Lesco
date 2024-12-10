@@ -14,6 +14,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 //import java.util.List;
 
 /**
@@ -25,10 +28,12 @@ public class NadraDataAccess
     private static final String NADRA_DB_PATH="NADRADB.txt";
     private static final DateTimeFormatter DATE_FORMATTER=DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
-    public ArrayList<Nadra> loadNadraData() //throws IOException
+    private static final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+
+    public List<Nadra> loadNadraData() //throws IOException
     {
-        ArrayList<Nadra> nadraList=new ArrayList<>();
-        
+        List<Nadra> nadraList=new CopyOnWriteArrayList<>();
+        rwLock.readLock().lock();
         try(BufferedReader reader=new BufferedReader(new FileReader(NADRA_DB_PATH)))
         {
             String line;
@@ -57,12 +62,12 @@ public class NadraDataAccess
         }
         finally
         {
-            
+            rwLock.readLock().unlock();
         }
         return nadraList;
     }
     
-    public boolean updateCNICExpiryDate(ArrayList<Nadra> nadraData,String cnic,LocalDate newExpiryDate)
+    public boolean updateCNICExpiryDate(List<Nadra> nadraData,String cnic,LocalDate newExpiryDate)
     {
         boolean updated= false;
         
@@ -83,10 +88,10 @@ public class NadraDataAccess
     }
     
     
-    public void checkCNICExpiring(ArrayList<Nadra> nad)
+    public void checkCNICExpiring(List<Nadra> nad)
     {
        
-        System.out.println("\tThe folloing are CNICs expiring within the next 30 days: ");
+        System.out.println("\tThe following are CNICs expiring within the next 30 days: ");
         for(Nadra n:nad)
         {
             //checking cnic expiry date
@@ -98,8 +103,9 @@ public class NadraDataAccess
         System.out.println("----------------------------------------");
     }
     
-    public void saveNadraData(ArrayList<Nadra> nadraData)
+    public void saveNadraData(List<Nadra> nadraData)
     {
+        rwLock.writeLock().lock();
         try(BufferedWriter writer=new BufferedWriter(new FileWriter(NADRA_DB_PATH)))
         {
             for(Nadra record:nadraData)
@@ -112,6 +118,10 @@ public class NadraDataAccess
         catch(IOException e)
         {
             System.out.println("Error writing nadra file: "+ e.getMessage());   
+        }
+        finally
+        {
+            rwLock.writeLock().unlock();
         }
             
     }

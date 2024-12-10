@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 //import java.util.List;
 
 /**
@@ -23,7 +26,8 @@ import java.util.ArrayList;
 public class FileCustomerDataAccess //implements CustomerDataAccess
 {
     public static final String FILE_PATH= "CustomerInfo.txt";
-
+    private static final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
+    
     public FileCustomerDataAccess() 
     {
         
@@ -31,10 +35,11 @@ public class FileCustomerDataAccess //implements CustomerDataAccess
     
     
     //@Override
-    public ArrayList<Customer> loadAllCustomers()
+    public List<Customer> loadAllCustomers()
     {
-        ArrayList<Customer> customerList=new ArrayList<>();
+        List<Customer> customerList=new CopyOnWriteArrayList<>();
         DateTimeFormatter dateFormatter=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        rwLock.readLock().lock();
         try(BufferedReader br=new BufferedReader(new FileReader(FILE_PATH)))
         {
             
@@ -110,16 +115,21 @@ public class FileCustomerDataAccess //implements CustomerDataAccess
         {
             System.out.println("Error Loading Customer Data"+e.getMessage());
         }
+        finally
+        {
+            rwLock.readLock().unlock();
+        }
         return customerList;
 }
     
     //@Override
-    public void saveAllCustomers(ArrayList<Customer> customerList) 
+    public void saveAllCustomers(List<Customer> customerList) 
     {
     BufferedWriter bw = null;
     FileWriter fw = null;
-
-    try {
+    rwLock.writeLock().lock();
+    try 
+    {
         fw = new FileWriter(FILE_PATH);
         bw = new BufferedWriter(fw);
 
@@ -138,7 +148,8 @@ public class FileCustomerDataAccess //implements CustomerDataAccess
             bw.newLine(); // move to the next line after writing one customer's data
         }
         bw.flush(); // ensures all data is written to the file
-    } catch (IOException e) 
+    } 
+    catch (IOException e) 
     {
         System.out.println("Error while saving data to file\n" + e.getMessage());
     } 
@@ -154,6 +165,10 @@ public class FileCustomerDataAccess //implements CustomerDataAccess
         catch (IOException e) 
         {
             System.out.println("Error while closing the file writer\n" + e.getMessage());
+        }
+        finally
+        {
+            rwLock.writeLock().unlock();
         }
     }
 }

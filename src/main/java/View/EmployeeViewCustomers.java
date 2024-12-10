@@ -9,6 +9,7 @@ import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.AbstractCellEditor;
 import javax.swing.JButton;
@@ -29,16 +30,22 @@ import com.mycompany.a1_scd_22l7942.Customer;
 
 import Controller.EmployeeController;
 
-/**
- *
- * @author LENOVO
- */
-public class EmployeeViewCustomers extends JFrame {
+/*public class EmployeeViewCustomers extends JFrame
+{
+    private JLabel jlTitle;
+    private DefaultTableModel model;
+    private JTable table;
+    EmployeeController empController;
+    private List<Customer> data;
+    private JButton jbBackToMainMenu;
+    private JTextField searchBar;*/
+public class EmployeeViewCustomers extends JFrame 
+{
     public JLabel jlTitle;
     public DefaultTableModel model;
     public JTable table;
     public EmployeeController empController;
-    public ArrayList<Customer> data;
+    public List<Customer> data;
     public JButton jbBackToMainMenu;
     public JTextField searchBar;
 

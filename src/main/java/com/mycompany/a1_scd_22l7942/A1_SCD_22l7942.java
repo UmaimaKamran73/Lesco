@@ -6,6 +6,7 @@ package com.mycompany.a1_scd_22l7942;
 
 import Controller.CustomerController;
 import Controller.EmployeeController;
+import Server.Server;
 import View.Welcome;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -37,7 +39,7 @@ public class A1_SCD_22l7942
     }
     
     //checking from customer arraylist
-    public static Customer findCustomer(ArrayList<Customer> customerList,String CustID,String CNIC)
+    public static Customer findCustomer(List<Customer> customerList,String CustID,String CNIC)
     {
         for(Customer customer: customerList)
         {
@@ -49,7 +51,7 @@ public class A1_SCD_22l7942
         return null;
     }
     
-    public static Customer findCustomer(ArrayList<Customer> customerList,String custID)
+    public static Customer findCustomer(List<Customer> customerList,String custID)
     {
         for(Customer customer: customerList)
         {
@@ -65,6 +67,8 @@ public class A1_SCD_22l7942
     {
         Scanner obj=new Scanner(System.in);
         
+        Server server=new Server();
+
         CustomerController custController=new CustomerController();
         EmployeeController empController=new EmployeeController();
         new Welcome(custController,empController);
@@ -72,17 +76,17 @@ public class A1_SCD_22l7942
         //all the other code is of previous A1
         //currently the code is running with both CLI and GUI
         //loading all the files data into 3 arrays
-        FileCustomerDataAccess dataAccess=new FileCustomerDataAccess();
+         FileCustomerDataAccess dataAccess=new FileCustomerDataAccess();
         EmployeeDataAccess empData=new EmployeeDataAccess();
         NadraDataAccess nadra=new NadraDataAccess();
         BillingDataAccess billing=new BillingDataAccess();
         TarrifTaxDataAccess tarrif=new TarrifTaxDataAccess();
         //NadraFunc nardaFunc=new NadraFunc();
-        ArrayList<Nadra> nadraList= nadra.loadNadraData();
-        ArrayList<Customer> customerList=dataAccess.loadAllCustomers();
-        ArrayList<Billing> billingList=billing.loadFileData();
+        List<Nadra> nadraList= nadra.loadNadraData();
+        List<Customer> customerList=dataAccess.loadAllCustomers();
+        List<Billing> billingList=billing.loadFileData();
         matchBillingRecords(customerList,billingList);
-        ArrayList<TarrifTax> tarrifList=tarrif.loadData();
+        List<TarrifTax> tarrifList=tarrif.loadData();
         
             int choice;
             int menuChoice;
@@ -494,7 +498,7 @@ public class A1_SCD_22l7942
         }
     }
     
-     public static void matchBillingRecords(ArrayList<Customer> customers,ArrayList<Billing> billingRecords)
+     public static void matchBillingRecords(List<Customer> customers,List<Billing> billingRecords)
     {
         for(Customer customer:customers)
         {
@@ -508,7 +512,7 @@ public class A1_SCD_22l7942
         }
     }
      
-    public static void displayUnpaidBills(ArrayList<Billing> billingList)
+    public static void displayUnpaidBills(List<Billing> billingList)
     {
         for(Billing billing:billingList)
         {
@@ -519,7 +523,7 @@ public class A1_SCD_22l7942
         }
     }
     
-    public static void displayAllCustomers(ArrayList<Customer> customerList)
+    public static void displayAllCustomers(List<Customer> customerList)
     {
         if (customerList.isEmpty()) 
         {
@@ -548,7 +552,7 @@ public class A1_SCD_22l7942
         }
     }
     
-    public static void showBillsReport(ArrayList<Billing> billingList)
+    public static void showBillsReport(List<Billing> billingList)
     {
         int paid=0,unpaid=0;
         for(Billing billing:billingList)
@@ -564,7 +568,7 @@ public class A1_SCD_22l7942
         System.out.println("Unpaid Bills: "+unpaid);
     }
      
-     public static void viewCurrentBill(int currReadings, Customer currCustomer, ArrayList<Customer> customerList, ArrayList<Billing> billingList, ArrayList<TarrifTax> tariffList)
+     public static void viewCurrentBill(int currReadings, Customer currCustomer, List<Customer> customerList, List<Billing> billingList, List<TarrifTax> tariffList)
      {
         if (currCustomer == null) 
         {
@@ -640,7 +644,7 @@ public class A1_SCD_22l7942
      
 
     // Sample function to get the tariff data
-    private static TarrifTax getTarrif(MeterType meterType, CustomerType customerType, ArrayList<TarrifTax> tariffList) 
+    private static TarrifTax getTarrif(MeterType meterType, CustomerType customerType, List<TarrifTax> tariffList) 
     {
         for (TarrifTax tariff : tariffList) 
         {
@@ -665,7 +669,7 @@ public class A1_SCD_22l7942
     }
     
     
-    public static void addNewBillingRecord(ArrayList<Billing> billingList,ArrayList<Customer> customerList,ArrayList<TarrifTax> tarrifList)
+    public static void addNewBillingRecord(List<Billing> billingList,List<Customer> customerList,List<TarrifTax> tarrifList)
      {
         Scanner scanner = new Scanner(System.in);
 
@@ -784,7 +788,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         System.out.println("Billing record added successfully.");
     }
     
-    public static Billing findBillingRecord(String custID,ArrayList<Billing> billingList)
+    public static Billing findBillingRecord(String custID,List<Billing> billingList)
     {
         for(Billing billing:billingList)
         {
@@ -796,7 +800,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         return null;
     }
     
-    public static void displayTarrifTax(ArrayList<TarrifTax> tarrif)
+    public static void displayTarrifTax(List<TarrifTax> tarrif)
     {
         System.out.println(tarrif.size());
         System.out.println("-------TARRIF TAX INFO-----------");
@@ -808,7 +812,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         }
     }
     
-    public static void updateTarrifTax(ArrayList<TarrifTax> tarrifList)
+    public static void updateTarrifTax(List<TarrifTax> tarrifList)
     {
         Scanner obj=new Scanner(System.in);
         int meter,cust;
@@ -852,7 +856,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         
         //saving data back in file
     }
-    public static void updateFixedPrice(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updateFixedPrice(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Fixed Price: ");
         int fixedPrice = obj.nextInt();
@@ -871,7 +875,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         
     }
 
-    public static void updateTaxPercentage(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updateTaxPercentage(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Tax Percentage: ");
         float taxPercentage = obj.nextFloat();
@@ -890,7 +894,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
             } 
     }
 
-    public static void updateRegularUnitPrice(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updateRegularUnitPrice(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Regular Unit Price: ");
         BigDecimal regularUnitPrice = obj.nextBigDecimal();
@@ -912,7 +916,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         }
     }
 
-    public static void updatePeakUnitPrice(int meter, int cust, ArrayList<TarrifTax> tarrifList) {
+    public static void updatePeakUnitPrice(int meter, int cust, List<TarrifTax> tarrifList) {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter new Peak Unit Price: ");
         BigDecimal peakUnitPrice = obj.nextBigDecimal();
@@ -939,7 +943,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         return tarrif.getMeterType() == meterType && tarrif.getCustType() == customerType;
     }
     
-     public static Customer createNewCustomer(String CNIC,ArrayList<Customer> customerList)
+     public static Customer createNewCustomer(String CNIC,List<Customer> customerList)
      {
         Scanner obj=new Scanner(System.in);
         
@@ -987,7 +991,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         return new Customer(generateCustomerId(customerList), CNIC, name, address, phoneNumber, customerType, meterType, connectionDate, 0, 0);
      }
     
-     public static String generateCustomerId(ArrayList<Customer> customerList)
+     public static String generateCustomerId(List<Customer> customerList)
      {
          int maxId = 1000;  // Start with the lowest possible 4-digit ID
 
@@ -1111,7 +1115,7 @@ BigDecimal fixedCharges = BigDecimal.valueOf(applicableTarrif.getFixedCharges())
         }
     }
     
-    public static boolean canInstallMeter(String CNIC,ArrayList<Customer> customers)
+    public static boolean canInstallMeter(String CNIC,List<Customer> customers)
     {
         int meterCount=0;
         

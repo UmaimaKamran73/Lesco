@@ -7,6 +7,7 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -112,13 +113,19 @@ public class EmployeeMenu extends JFrame {
         new EmployeeViewExpiringCNICReport(empController);// empController);
     }
 
-    private void handleViewBillsReport() {
+    private void handleViewBillsReport()
+    {
+        List<Integer> bills=empController.viewBillsReport();
+        setVisible(false); dispose();
+        new EmployeeViewBillsReport(empController, (ArrayList<Integer>) bills);  //ut shouldn't it be list?
+    }
+        /*private void handleViewBillsReport() {
         ArrayList<Integer> bills = empController.viewBillsReport();
         setVisible(false);
         dispose();
         new EmployeeViewBillsReport(empController, bills);
     }
-
+ */
     private void handleViewBills() {
         setVisible(false);
         dispose();
@@ -156,7 +163,8 @@ public class EmployeeMenu extends JFrame {
         new EmployeeChangePassword(empController);
     }
 
-    private void handleLogout() {
+    private void handleLogout()
+    {
         setVisible(false);
         dispose();
         new Welcome(new CustomerController(), new EmployeeController());

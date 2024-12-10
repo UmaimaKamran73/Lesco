@@ -10,6 +10,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  *
@@ -19,9 +22,12 @@ public class EmployeeDataAccess
 {
     private static final String EMPLOYEE_FILE_PATH="EmployeeInfo.txt";
     
+    private static final ReentrantReadWriteLock rwLock=new ReentrantReadWriteLock();
+    
     public Employee authenticateEmployee(String username,String Password)
     {
         BufferedReader br=null;
+        rwLock.readLock().lock();
         try
         {
             br=new BufferedReader(new FileReader(EMPLOYEE_FILE_PATH));
@@ -73,17 +79,21 @@ public class EmployeeDataAccess
             {
                 System.out.println("Error while closing the file reader "+e.getMessage());
             }
+            finally
+            {
+                rwLock.readLock().unlock();
+            }
         }
         return null;
     }
     
     public boolean updatePassword(String username,String newPassword)
     {
-        ArrayList<String> lines=new ArrayList<>();
+        List<String> lines=new CopyOnWriteArrayList<>();
         boolean updated=false;
         BufferedReader br=null;
         BufferedWriter bw=null;
-        
+        rwLock.writeLock().lock();
         try
         {
             br=new BufferedReader(new FileReader(EMPLOYEE_FILE_PATH));
@@ -136,6 +146,10 @@ public class EmployeeDataAccess
             catch(IOException e)
             {
                 System.out.println("Error while closing file readers: "+e.getMessage());
+            }
+            finally
+            {
+                rwLock.writeLock().unlock();
             }
        }
     return updated;
