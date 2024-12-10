@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: ModelTests.EmployeeTest
+Test set: ViewTests.CustomerLoginTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s -- in ModelTests.EmployeeTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.57 s -- in ViewTests.CustomerLoginTest
