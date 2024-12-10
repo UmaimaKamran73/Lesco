@@ -4,13 +4,14 @@
  */
 package com.mycompany.a1_scd_22l7942;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  *
  * @author LENOVO
  */
-public class TarrifTax 
+public class TarrifTax implements Serializable
 {
    final MeterType meterType;
    final CustomerType custType;

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -30,7 +31,7 @@ public class EmployeeViewCustomersTest {
   @Mock
   private EmployeeController empControllerMock;
   private EmployeeViewCustomers employeeView;
-  private ArrayList<Customer> mockCustomerData;
+  private List<Customer> mockCustomerData;
 
   @BeforeEach
   public void setUp() {
@@ -119,7 +120,7 @@ public class EmployeeViewCustomersTest {
 
     employeeView.handleDelete(customerToDelete);
 
-    ArrayList<Customer> updatedList = new ArrayList<>();
+    List<Customer> updatedList = new ArrayList<>();
     updatedList.add(mockCustomerData.get(1));
     when(empControllerMock.getCustomerList()).thenReturn(updatedList);
 

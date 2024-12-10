@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import com.mycompany.a1_scd_22l7942.CustomerType;
 import com.mycompany.a1_scd_22l7942.MeterType;
 import com.mycompany.a1_scd_22l7942.TarrifTax;
+import java.util.List;
 
 class TarrifTaxTest {
 

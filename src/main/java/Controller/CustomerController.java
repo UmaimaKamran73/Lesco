@@ -59,4 +59,9 @@ public class CustomerController
         return customerModel.getTarrifList();
     }
 
+    public void setCustomer() 
+    {
+        
+    }
+
 }

@@ -4,6 +4,7 @@
  */
 package com.mycompany.a1_scd_22l7942;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -11,7 +12,7 @@ import java.time.temporal.ChronoUnit;
  *
  * @author LENOVO
  */
-public class Nadra 
+public class Nadra implements Serializable
 {
     String custID;
     

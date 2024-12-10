@@ -108,12 +108,12 @@ public class FileCustomerDataAccess //implements CustomerDataAccess
             }
             catch(IOException e)
             {
-                System.out.println("Error while reading the file"+e.getMessage());
+                System.out.println("Error while reading the file: "+e.getMessage());
             }
         }
         catch(IOException e)
         {
-            System.out.println("Error Loading Customer Data"+e.getMessage());
+            System.out.println("Error Loading Customer Data: "+e.getMessage());
         }
         finally
         {

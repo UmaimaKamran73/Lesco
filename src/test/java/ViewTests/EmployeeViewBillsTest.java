@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -24,7 +25,7 @@ class EmployeeViewBillsTest {
   @Mock
   private EmployeeController mockController;
   private EmployeeViewBills view;
-  private ArrayList<Billing> bills;
+  private List<Billing> bills;
 
   @BeforeEach
   void setUp() {
