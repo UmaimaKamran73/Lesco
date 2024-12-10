@@ -23,7 +23,8 @@ import Controller.EmployeeController;
  *
  * @author LENOVO
  */
-public class EmployeeEditCustomer extends JFrame {
+public class EmployeeEditCustomer extends JFrame 
+{
     public EmployeeController empController;
     public Customer customer;
     // "CustomreID","Name","Address","Phone","Customer Type","Meter

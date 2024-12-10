@@ -10,6 +10,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import java.util.List;
 
 import com.mycompany.a1_scd_22l7942.Nadra;
 
@@ -20,7 +21,7 @@ public class EmployeeViewExpiringCNICReportTest {
 
   private EmployeeController empControllerMock;
   private EmployeeViewExpiringCNICReport employeeView;
-  private ArrayList<Nadra> mockData;
+  private List<Nadra> mockData;
 
   @BeforeEach
   public void setUp() {

@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 
 import com.mycompany.a1_scd_22l7942.CustomerType;
 import com.mycompany.a1_scd_22l7942.MeterType;
@@ -18,7 +19,7 @@ class TarrifTaxDataAccessTest {
   @Test
   void testLoadData() {
     TarrifTaxDataAccess dataAccess = new TarrifTaxDataAccess();
-    ArrayList<TarrifTax> tarrifList = dataAccess.loadData();
+    List<TarrifTax> tarrifList = dataAccess.loadData();
 
     assertNotNull(tarrifList);
     assertTrue(tarrifList.size() > 0);
@@ -34,7 +35,7 @@ class TarrifTaxDataAccessTest {
   @Test
   void testSaveData() {
     TarrifTaxDataAccess dataAccess = new TarrifTaxDataAccess();
-    ArrayList<TarrifTax> tarrifList = new ArrayList<>();
+    List<TarrifTax> tarrifList = new ArrayList<>();
 
     TarrifTax tarrifTax;
     tarrifTax = new TarrifTax(
@@ -48,7 +49,7 @@ class TarrifTaxDataAccessTest {
     tarrifList.add(tarrifTax);
     dataAccess.saveData(tarrifList);
 
-    ArrayList<TarrifTax> loadedList = dataAccess.loadData();
+    List<TarrifTax> loadedList = dataAccess.loadData();
 
     assertEquals(1, loadedList.size());
     TarrifTax loadedTarrif = loadedList.get(0);

@@ -18,12 +18,13 @@ import com.mycompany.a1_scd_22l7942.BillingDataAccess;
 import com.mycompany.a1_scd_22l7942.Customer;
 import com.mycompany.a1_scd_22l7942.CustomerType;
 import com.mycompany.a1_scd_22l7942.MeterType;
+import java.util.List;
 
 class BillingDataAccessTest {
 
   private BillingDataAccess billingDataAccess;
-  private ArrayList<Billing> billingList;
-  private ArrayList<Customer> customerList;
+  private List<Billing> billingList;
+  private List<Customer> customerList;
 
   @BeforeEach
   void setUp() {
@@ -52,7 +53,7 @@ class BillingDataAccessTest {
 
   @Test
   void testLoadFileData() {
-    ArrayList<Billing> loadedData = billingDataAccess.loadFileData();
+    List<Billing> loadedData = billingDataAccess.loadFileData();
     assertNotNull(loadedData);
   }
 
@@ -77,7 +78,7 @@ class BillingDataAccessTest {
   void testSaveFileData() {
     billingDataAccess.saveFileData(billingList);
 
-    ArrayList<Billing> reloadedBilling = billingDataAccess.loadFileData();
+    List<Billing> reloadedBilling = billingDataAccess.loadFileData();
     assertNotNull(reloadedBilling);
     assertFalse(reloadedBilling.isEmpty());
     assertEquals("C001", reloadedBilling.get(0).getCustID());
@@ -88,12 +89,12 @@ class BillingDataAccessTest {
   void testLoadInvalidFile() {
     billingDataAccess = new BillingDataAccess() {
       @Override
-      public ArrayList<Billing> loadFileData() {
+      public List<Billing> loadFileData() {
         return new ArrayList<>();
       }
     };
 
-    ArrayList<Billing> loadedData = billingDataAccess.loadFileData();
+    List<Billing> loadedData = billingDataAccess.loadFileData();
     assertTrue(loadedData.isEmpty());
   }
 
@@ -114,7 +115,7 @@ class BillingDataAccessTest {
 
     billingDataAccess.saveFileData(billingList);
 
-    ArrayList<Billing> reloadedBilling = billingDataAccess.loadFileData();
+    List<Billing> reloadedBilling = billingDataAccess.loadFileData();
     assertEquals(2, reloadedBilling.size());
     assertEquals("C002", reloadedBilling.get(1).getCustID());
   }

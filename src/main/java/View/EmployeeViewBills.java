@@ -62,7 +62,8 @@ public class EmployeeViewBills extends JFrame
     public List<Billing> filteredData; // To hold filtered results
     public JTextField searchBar;
 
-    public EmployeeViewBills(EmployeeController empController) {
+    public EmployeeViewBills(EmployeeController empController) 
+    {
         this.empController = empController;
         data = empController.getBillsList();
         init();

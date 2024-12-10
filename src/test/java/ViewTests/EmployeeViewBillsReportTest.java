@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -24,7 +25,7 @@ public class EmployeeViewBillsReportTest {
   @Mock
   private EmployeeController mockController;
 
-  private ArrayList<Integer> mockBills;
+  private List<Integer> mockBills;
 
   @BeforeEach
   public void setUp() {
@@ -33,7 +34,7 @@ public class EmployeeViewBillsReportTest {
     mockBills.add(100);
     mockBills.add(50);
     mockBills.add(50);
-    view = new EmployeeViewBillsReport(mockController, mockBills);
+    view = new EmployeeViewBillsReport(mockController, (ArrayList<Integer>) mockBills);
   }
 
   @Test

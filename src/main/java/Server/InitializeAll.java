@@ -21,7 +21,7 @@ public class InitializeAll
 {
     CustomerController customerController;
     EmployeeController employeeController;
-    public void InitializeCusomter()
+    public InitializeAll()
     {
         FileCustomerDataAccess customerFile = new FileCustomerDataAccess();
         NadraDataAccess nadraFile = new NadraDataAccess();

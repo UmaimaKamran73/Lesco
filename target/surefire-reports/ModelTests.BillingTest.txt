@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ModelTests.BillingTest
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 s -- in ModelTests.BillingTest
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 s -- in ModelTests.BillingTest

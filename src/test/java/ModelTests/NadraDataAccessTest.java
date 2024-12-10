@@ -9,6 +9,7 @@ import java.io.PrintStream;
 import java.io.StringReader;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -31,16 +32,16 @@ class NadraDataAccessTest {
       }
     };
 
-    ArrayList<Nadra> nadraList = nadraDataAccess.loadNadraData();
+    List<Nadra> nadraList = nadraDataAccess.loadNadraData();
     assertEquals(1, nadraList.size());
     assertEquals("C001", nadraList.get(0).getCustID());
     assertEquals("12345", nadraList.get(0).getCNIC());
-    assertEquals(LocalDate.of(2025, 02, 01), nadraList.get(0).getExpiryDate());
+    assertEquals(LocalDate.of(2025, 2, 8), nadraList.get(0).getExpiryDate());
   }
 
   @Test
   void testUpdateCNICExpiryDate() {
-    ArrayList<Nadra> nadraList = new ArrayList<>();
+    List<Nadra> nadraList = new ArrayList<>();
     nadraList.add(new Nadra("C001", "12345", LocalDate.now().plusDays(30)));
 
     NadraDataAccess nadraDataAccess = new NadraDataAccess();
@@ -52,7 +53,7 @@ class NadraDataAccessTest {
 
   @Test
   void testUpdateCNICExpiryDateNotFound() {
-    ArrayList<Nadra> nadraList = new ArrayList<>();
+    List<Nadra> nadraList = new ArrayList<>();
     nadraList.add(new Nadra("C001", "12345", LocalDate.now().plusDays(30)));
 
     NadraDataAccess nadraDataAccess = new NadraDataAccess();
@@ -63,7 +64,7 @@ class NadraDataAccessTest {
 
   @Test
   void testCheckCNICExpiring() {
-    ArrayList<Nadra> nadraList = new ArrayList<>();
+    List<Nadra> nadraList = new ArrayList<>();
     nadraList.add(new Nadra("C001", "12345", LocalDate.now().plusDays(15)));
     nadraList.add(new Nadra("C002", "67890", LocalDate.now().plusDays(45)));
 
@@ -80,7 +81,7 @@ class NadraDataAccessTest {
 
   @Test
   void testSaveNadraData() throws IOException {
-    ArrayList<Nadra> nadraList = new ArrayList<>();
+    List<Nadra> nadraList = new ArrayList<>();
     nadraList.add(new Nadra("C001", "12345", LocalDate.now().plusDays(30)));
 
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

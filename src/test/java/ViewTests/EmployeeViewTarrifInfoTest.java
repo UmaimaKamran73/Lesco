@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +24,7 @@ class EmployeeViewTarrifInfoTest {
 
   private EmployeeViewTarrifInfo view;
   private EmployeeController empControllerMock;
-  private ArrayList<TarrifTax> tarrifList;
+  private List<TarrifTax> tarrifList;
 
   @BeforeEach
   void setUp() {

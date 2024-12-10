@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -31,7 +32,7 @@ class FileCustomerDataAccessTest {
     writer.close();
 
     FileCustomerDataAccess dataAccess = new FileCustomerDataAccess();
-    ArrayList<Customer> customers = dataAccess.loadAllCustomers();
+    List<Customer> customers = dataAccess.loadAllCustomers();
     assertEquals(1, customers.size());
 
     Customer customer = customers.get(0);
@@ -59,7 +60,7 @@ class FileCustomerDataAccessTest {
     writer.close();
 
     FileCustomerDataAccess dataAccess = new FileCustomerDataAccess();
-    ArrayList<Customer> customers = dataAccess.loadAllCustomers();
+    List<Customer> customers = dataAccess.loadAllCustomers();
     assertTrue(customers.isEmpty());
 
     new File(testFile).delete();
@@ -68,7 +69,7 @@ class FileCustomerDataAccessTest {
   @Test
   void testSaveAllCustomers() throws IOException {
     String testFile = "CustomerInfo.txt";
-    ArrayList<Customer> customers = new ArrayList<>();
+    List<Customer> customers = new ArrayList<>();
     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     Customer customer = new Customer();

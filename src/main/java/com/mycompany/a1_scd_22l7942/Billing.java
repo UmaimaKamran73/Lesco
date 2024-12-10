@@ -4,6 +4,7 @@
  */
 package com.mycompany.a1_scd_22l7942;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
@@ -14,7 +15,9 @@ import java.time.format.DateTimeParseException;
  *
  * @author LENOVO
  */
-public class Billing {
+public class Billing implements Serializable
+{
+     private static final long serialVersionUID = 1L;
     public String CustID; // from customers (do aggregation for it?
     public Month billingMonth; // using builtin enum
     public int currentRegularMeterReading;
