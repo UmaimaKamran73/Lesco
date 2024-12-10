@@ -4,6 +4,7 @@
  */
 package com.mycompany.a1_scd_22l7942;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -13,8 +14,10 @@ import java.util.ArrayList;
  *
  * @author LENOVO
  */
-public class Customer 
+public class Customer implements Serializable
 {
+    private static final long serialVersionUID = 3175390045694102459L;
+
     String custID; //unique 4 digit(search for limit of digits thingy
     String CNIC;  //same search for 3 numbers without dashes
     String custName;  //comma check for every function almost. only letters and spaces

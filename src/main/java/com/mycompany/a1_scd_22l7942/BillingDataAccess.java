@@ -15,10 +15,6 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-/**
- *
- * @author LENOVO
- */
 public class BillingDataAccess 
 {
     private static final String BILLING_FILE_PATH="BillingInfo.txt";

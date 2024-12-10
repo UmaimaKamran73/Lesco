@@ -98,6 +98,7 @@ public class Welcome extends JFrame
     {
         jbEmployee.setEnabled(false);
         setVisible(false); dispose();
+        empController.setEmployee();
         new EmployeeLogin(empController);
     }
 
@@ -105,6 +106,7 @@ public class Welcome extends JFrame
     {
          jbCustomer.setEnabled(false);
         setVisible(false); dispose(); //closing this window
+        custController.setCustomer();
         new CustomerLogin(custController);
     }
 

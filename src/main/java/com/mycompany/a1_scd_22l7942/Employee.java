@@ -4,11 +4,13 @@
  */
 package com.mycompany.a1_scd_22l7942;
 
+import java.io.Serializable;
+
 /**
  *
  * @author LENOVO
  */
-public class Employee 
+public class Employee implements Serializable
 {
     String username;   //check for comma "," and can only enter alphabets or numbers
     String password;  //same check
